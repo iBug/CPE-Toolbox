@@ -1,0 +1,32 @@
+---
+title: Example
+layout: tool
+---
+
+<div>
+	<table align="center">
+		<tbody>
+			<tr>
+				<td><input type="text" id="inbox" /></td>
+			</tr>
+			<tr>
+				<td>
+					<input type="radio" name="mode" id="modePrepend" value="Prepend" checked />
+					<label for="modePrepend">Prepend</label>
+				</td>
+				<td>
+					<input type="radio" name="mode" id="modeAppend" value="Append" />
+					<label for="modeAppend">Append</label>
+				</td>
+			</tr>
+			<tr>
+				<td><input type="submit" id="submit" /></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div>
+	<pre id="outbox"></pre>
+</div>
+
+<script src="script.js"></script>
