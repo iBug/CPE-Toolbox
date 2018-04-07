@@ -1,4 +1,7 @@
-#main {
+.mainContent {
+	width: 600px;
+	margin: 0 auto;
+
 	.btn {
 		display: inline-block;
 		padding: 0.3em;
