@@ -36,6 +36,10 @@ showResult.onclick = function() {
   for (let i = 0; i < vk.length; i++) {
     va.push(vk[i] * vWaveLen * vDist / (vx[i] - ax));
   }
+  output.append("Average of x: " + iMath.average(vx));
+  for (let i = 0; i < va.length; i++) {
+    output.append("Calculated a[" + i + "]: " + va[i]);
+  }
   output.append("Average of a: " + iMath.average(va));
 };
 
