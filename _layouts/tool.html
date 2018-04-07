@@ -20,10 +20,15 @@
 			clear: function() {
 				this.field.innerText = "";
 			},
+			append: function(str) {
+				this.field.innerText += str + "\n";
+				return str;
+			},
 			print: function(str) {
 				this.field.innerText += str;
 				return str;
-			}
+			},
+			name: "lib-iBug.output"
 		};
 	</script>
 	<script type="text/javascript" src="{{ site.baseurl }}/lib-ibug.js"></script>

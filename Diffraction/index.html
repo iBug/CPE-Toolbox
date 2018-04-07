@@ -3,21 +3,25 @@ title: Diffraction
 layout: tool
 ---
 
-<table>
+<table align="center" id="mainTable">
 	<tbody>
 		<tr>
-			<td>
-				<label for="waveLength">Wave Length: </label>
-				<input type="text" id="waveLength" value="632.8" />
-			</td>
+			<td>Wave length (&lambda;) <input type="text" id="waveLength" value="632.8" /></td>
+			<td colspan="2">Distance (L)<input type="text" id="distance" value="" /></td>
 		</tr>
 		<tr>
-			<td>
-				<label for="distance">Distance: </label>
-				<input type="text" id="distance" />
-			</td>
+			<th># of gap (k)</th>
+			<th>Position (x<sub>k</sub></th>
+			<th></th>
+		</tr>
+		<tr>
+			<td><input type="text" name="ik" /></td>
+			<td><input type="text" name="ix" /></td>
+			<td></td>
+		</tr>
+		<tr id="addDataBefore">
+			<td colspan="2"><a id="addData" class="btn" href="#">Add another set</a></td>
+			<td colspan="2"><a id="showResult" class="btn" href="#">Show Result</a></td>
 		</tr>
 	</tbody>
 </table>
-
-<pre id="output"></pre>

@@ -12,7 +12,7 @@ function makeElement(type, init={}) {
 function toNumArray(l) {
   let res = [];
   for (let i = 0; i < l.length; i++) {
-    res.push(parseFloat(l.value));
+    res.push(Number(l[i].value));
   }
   return res;
 }
