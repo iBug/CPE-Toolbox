@@ -8,6 +8,15 @@ function makeElement(type, init={}) {
   return elem;
 }
 
+// Parse an array of <input>s to an array of numbers
+function toNumArray(l) {
+  let res = [];
+  for (let i = 0; i < l.length; i++) {
+    res.push(parseFloat(l.value));
+  }
+  return res;
+}
+
 const iMath = {
   average: function(l) {
     return this.sum(l) / l.length;

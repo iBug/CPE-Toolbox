@@ -24,16 +24,8 @@ showResult.onclick = function() {
   var sLens = document.querySelectorAll('input[name="sLen"]'),
     bDiams = document.querySelectorAll('input[name="bDiam"]'),
     wTimes = document.querySelectorAll('input[name="wTime"]');
-  var vl = [], vd = [], vT = [], vN = Number(document.getElementById("N").value);
-  for (let i = 0; i < sLens.length; i++) {
-    vl.push(Number(sLens[i].value));
-  }
-  for (let i = 0; i < bDiams.length; i++) {
-    vd.push(Number(bDiams[i].value));
-  }
-  for (let i = 0; i < wTimes.length; i++) {
-    vT.push(Number(wTimes[i].value));
-  }
+  var vl = toNumArray(sLens), vd = toNumArray(bDiams), vT = toNumArray(wTimes),
+    vN = Number(document.getElementById("N").value);
   output.clear();
   output.print("Average string length: " + iMath.average(vl) + "\n");
   output.print("Average ball diagram: " + iMath.average(vd) + "\n");
