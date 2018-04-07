@@ -12,7 +12,20 @@
 <body>
 	<div id="main">
 		{{ content }}
+		<pre id="output"></pre>
 	</div>
+	<script type="text/javascript">
+		const output = {
+			field: document.getElementById("output"),
+			clear: function() {
+				this.field.innerText = "";
+			},
+			print: function(str) {
+				this.field.innerText += str;
+				return str;
+			}
+		};
+	</script>
 	<script type="text/javascript" src="{{ site.baseurl }}/lib-ibug.js"></script>
 	<script type="text/javascript" src="script.js"></script>
 </body>
