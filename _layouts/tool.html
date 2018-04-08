@@ -5,8 +5,7 @@
 	<meta name="author" content="iBug" />
 	<meta property="og:locale" content="en_US" />
 	<link rel="canonical" href="{{ site.url }}{{ site.baseurl }}/{{ page.title }}" />
-	<link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/assets/style.css" type="text/css" />
-	<style type="text/css" src="{{ site.url }}{{ site.baseurl }}/assets/style.css"></style>
+	<link rel="stylesheet" href="{{ site.url }}/cdn/bootstrap/bootstrap.min.css" type="text/css" />
 	<meta name="theme-color" content="#FF0000" />
 	<meta http-equiv="cache-control" content="no-cache" />
 	<meta http-equiv="expires" content="0" />
@@ -19,6 +18,9 @@
 			<pre id="output"></pre>
 		</div>
 	</section>
+
+	<script src="{{ site.url }}/cdn/jquery/jquery-3.2.1.slim.min.js"></script>
+	<script src="{{ site.url }}/cdn/bootstrap/bootstrap.bundle.min.js"></script>
 	<script type="text/javascript">
 		const output = {
 			field: document.getElementById("output"),
