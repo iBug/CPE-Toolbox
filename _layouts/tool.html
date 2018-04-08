@@ -5,18 +5,20 @@
 	<meta name="author" content="iBug" />
 	<meta property="og:locale" content="en_US" />
 	<link rel="canonical" href="{{ site.url }}{{ site.baseurl }}/{{ page.title }}" />
-	<link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/assets/cpet.css" type="text/css" />
-	<style type="text/css" src="{{ site.url }}{{ site.baseurl }}/assets/cpet.css"></style>
+	<link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/assets/style.css" type="text/css" />
+	<style type="text/css" src="{{ site.url }}{{ site.baseurl }}/assets/style.css"></style>
 	<meta name="theme-color" content="#FF0000" />
 	<meta http-equiv="cache-control" content="no-cache" />
 	<meta http-equiv="expires" content="0" />
 	<meta name="robots" content="noarchive" />
 </head>
 <body>
-	<div id="main" class="mainContent">
-		{{ content }}
-		<pre id="output"></pre>
-	</div>
+	<section id="main" class="main-content">
+		<div>
+			{{ content }}
+			<pre id="output"></pre>
+		</div>
+	</section>
 	<script type="text/javascript">
 		const output = {
 			field: document.getElementById("output"),
