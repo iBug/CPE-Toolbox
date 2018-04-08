@@ -21,9 +21,7 @@ btnAddData.onclick = function() {
 var btnShowResult = document.getElementById("showResult");
 showResult.addEventListener("click", e => e.preventDefault());
 showResult.onclick = function() {
-  var iks = document.querySelectorAll('input[name="ik"]'),
-    ixs = document.querySelectorAll('input[name="ix"]');
-  var vk = toNumArray(iks), vx = toNumArray(ixs),
+  var vk = getNumbers("ik"), vx = getNumbers("ix"),
     vWaveLen = Number(document.getElementById("waveLength").value),
     vDist = Number(document.getElementById("distance").value);
 

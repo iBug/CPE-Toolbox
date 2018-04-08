@@ -17,6 +17,10 @@ function toNumArray(l) {
   return res;
 }
 
+function getNumbers(name) {
+  return toNumArray(document.querySelectorAll('input[name="' + name + '"]'));
+}
+
 const iMath = {
   average: function(l) {
     return this.sum(l) / l.length;
@@ -34,6 +38,11 @@ const iMath = {
       dl.push(Math.pow(l[i] - a, 2));
     }
     return Math.sqrt(this.sum(dl) / (dl.length - 1));
+  },
+  uncertainty: function(l, t, k, acc, C) {
+    return Math.sqrt(
+      Math.pow(t * this.stddev(l) / Math.sqrt(l.length), 2) + Math.pow(k * acc / C, 2)
+    );
   },
   name: "lib-iBug.iMath"
 };
