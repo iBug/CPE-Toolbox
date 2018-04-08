@@ -1,9 +1,7 @@
-# College Physics Experiments Toolbox
+# 大物实验工具箱 (CPE Toolbox)
 
-**CPE Toolbox** is a set of (computing) tools and utilities designed for College Physics Experiments, an ~~in~~famous course of USTC.
+**大物实验工具箱** 包含了你在大物实验，合肥科学技术工地最令人讨厌的课程中需要的各种计算。你只需要输入数据，就能自动生成各步计算结果。
 
-These tools will help you do calculations in experiments, and will save you a *lot* of time writing the experiment reports.
-
-Visit this tool set [live][live]!
+[现在体验！][live]
 
   [live]: https://ibug.github.io/CPE-Toolbox

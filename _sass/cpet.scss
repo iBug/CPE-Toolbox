@@ -24,7 +24,7 @@
 }
 
 .main-content {
-	width: 83%;
+	max-width: 83%;
 	margin: 0 auto;
 
 	@include large {
