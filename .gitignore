@@ -1,3 +1,4 @@
 # Swap files
 *.sw[a-p]
 *.sw_
+.DS_Store
