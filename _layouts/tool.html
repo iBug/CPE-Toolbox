@@ -1,43 +1,47 @@
 <!DOCTYPE html>
-<head>
-	<title>{{ page.title | default: "Unnamed tool" }} - CPE Toolbox</title>
-	<meta charset="UTF-8" />
-	<meta name="author" content="iBug" />
-	<meta property="og:locale" content="en_US" />
-	<link rel="canonical" href="{{ site.url }}{{ site.baseurl }}/{{ page.title }}" />
-	<link rel="stylesheet" href="{{ site.url }}/cdn/bootstrap/bootstrap.min.css" type="text/css" />
-	<meta name="theme-color" content="#FF0000" />
-	<meta http-equiv="cache-control" content="no-cache" />
-	<meta http-equiv="expires" content="0" />
-	<meta name="robots" content="noarchive" />
-</head>
-<body>
-	<section id="main" class="main-content">
-		<div>
-			{{ content }}
-			<pre id="output"></pre>
-		</div>
-	</section>
+<html>
+	<head>
+		<title>{{ page.title | default: "Unnamed tool" }} - CPE Toolbox</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<meta name="author" content="iBug" />
+		<meta property="og:locale" content="en_US" />
+		<link rel="canonical" href="{{ page.url }}" />
+		<link rel="stylesheet" href="{{ site.url }}/cdn/bootstrap/bootstrap.min.css" type="text/css" />
+		<link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/assets/style.css" type="text/css" />
+		<meta name="theme-color" content="#FF0000" />
+		<meta http-equiv="cache-control" content="no-cache" />
+		<meta http-equiv="expires" content="0" />
+		<meta name="robots" content="noarchive" />
+	</head>
+	<body>
+		<section id="main" class="main-content">
+			<div>
+				{{ content }}
+				<pre id="output"></pre>
+			</div>
+		</section>
 
-	<script src="{{ site.url }}/cdn/jquery/jquery-3.2.1.slim.min.js"></script>
-	<script src="{{ site.url }}/cdn/bootstrap/bootstrap.bundle.min.js"></script>
-	<script type="text/javascript">
-		const output = {
-			field: document.getElementById("output"),
-			clear: function() {
-				this.field.innerText = "";
-			},
-			append: function(str) {
-				this.field.innerText += str + "\n";
-				return str;
-			},
-			print: function(str) {
-				this.field.innerText += str;
-				return str;
-			},
-			name: "lib-iBug.output"
-		};
-	</script>
-	<script type="text/javascript" src="{{ site.baseurl }}/lib-ibug.js"></script>
-	<script type="text/javascript" src="script.js"></script>
-</body>
+		<script src="{{ site.url }}/cdn/jquery/jquery-3.2.1.slim.min.js"></script>
+		<script src="{{ site.url }}/cdn/bootstrap/bootstrap.bundle.min.js"></script>
+		<script type="text/javascript">
+			const output = {
+				field: document.getElementById("output"),
+				clear: function() {
+					this.field.innerText = "";
+				},
+				append: function(str) {
+					this.field.innerText += str + "\n";
+					return str;
+				},
+				print: function(str) {
+					this.field.innerText += str;
+					return str;
+				},
+				name: "lib-iBug.output"
+			};
+		</script>
+		<script type="text/javascript" src="{{ site.baseurl }}/lib-ibug.js"></script>
+		<script type="text/javascript" src="script.js"></script>
+	</body>
+</html>

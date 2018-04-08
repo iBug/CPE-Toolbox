@@ -1,27 +1,42 @@
 @import "variables";
 @import "normalize";
 
+@mixin large {
+	@media screen and (min-width: #{$large-breakpoint}) {
+		@content;
+	}
+}
+
+@mixin medium {
+	@media screen and (min-width: #{$medium-breakpoint}) and (max-width: #{$large-breakpoint}) {
+		@content;
+	}
+}
+
+@mixin small {
+	@media screen and (max-width: #{$medium-breakpoint}) {
+		@content;
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
 .main-content {
-	width: 600px;
+	width: 83%;
 	margin: 0 auto;
 
-	.btn {
-		display: inline-block;
-		padding: 0.3em;
-		text-decoration: none;
-		border-style: solid;
-		border-width: 1px;
-		border-radius: 0.3rem;
-		border-color: #1289FF;
-
-		&:hover {
-			text-decoration: none;
-			background-color: #89CDFF;
-		}
+	@include large {
+		max-width: 80rem;
+		padding: 1rem 2rem;
 	}
 
-	th td {
-		text-align: center;
-		vertical-align: middle;
+	@include medium {
+		padding: 0.8rem 1rem;
+	}
+
+	@include small {
+		padding: 0.5rem 0.5rem;
 	}
 }
