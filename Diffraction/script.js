@@ -27,10 +27,10 @@ showResult.onclick = function() {
 
   output.clear();
   if (vk.length != vx.length) {
-    output.append("Something went wrong.");
+    output.append("You supplied a different number of k's and x[k]'s.");
     return;
   }
-  var va = [], ax = iMath.average(vx);
+  var va = [], ax = iMath.linreg.a(vk, vx);
   for (let i = 0; i < vk.length; i++) {
     va.push(vk[i] * vWaveLen * vDist / (vx[i] - ax));
   }
