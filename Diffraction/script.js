@@ -21,11 +21,20 @@ btnAddData.onclick = function() {
 var btnShowResult = document.getElementById("showResult");
 showResult.addEventListener("click", e => e.preventDefault());
 showResult.onclick = function() {
+  output.clear();
   var vk = getNumbers("ik"), vx = getNumbers("ix"),
     vWaveLen = Number(document.getElementById("waveLength").value),
-    vDist = Number(document.getElementById("distance").value);
+    vDist = document.getElementById("distance").value;
+  if (vDist.length == 0) {
+    output.append("You forgot to enter L (distance between diffraction component and the CCD)!");
+    return;
+  }
+  if (vk.length <= 1 || vx.length <= 1) {
+    output.append("Cannot work with only 1 set of data!");
+    return;
+  }
+  vDist = Number(vDist);
 
-  output.clear();
   if (vk.length != vx.length) {
     output.append("You supplied a different number of k's and x[k]'s.");
     return;
