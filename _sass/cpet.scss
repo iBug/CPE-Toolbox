@@ -24,7 +24,6 @@
 }
 
 .main-content {
-	max-width: 83%;
 	margin: 0 auto;
 
 	@include large {
@@ -33,10 +32,12 @@
 	}
 
 	@include medium {
+		max-width: 83%;
 		padding: 0.8rem 1rem;
 	}
 
 	@include small {
+		max-width: 83%;
 		padding: 0.5rem 0.5rem;
 	}
 }
