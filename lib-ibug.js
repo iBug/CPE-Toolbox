@@ -8,11 +8,14 @@ function makeElement(type, init={}) {
   return elem;
 }
 
-// Parse an array of <input>s to an array of numbers
+// Parse an array of <input>s to an array of numbers, ignore blank inputs
 function toNumArray(l) {
-  let res = [];
+  let res = [], text;
   for (let i = 0; i < l.length; i++) {
-    res.push(Number(l[i].value));
+    text = l[i].value;
+    if (text.length != 0) {
+      res.push(Number(l[i].value));
+    }
   }
   return res;
 }
