@@ -19,12 +19,18 @@ showResult.onclick = function() {
     iD = getNumbers("iD"),
     im = getNumbers("im"),
     iri = getNumbers("iri"),
-    iro = getNumebrs("iro"),
+    iro = getNumbers("iro"),
     iT0 = getNumbers("iT0"),
-    iT1 = getNumbers("iT1");
+    iT1 = getNumbers("iT1"),
+    iN0 = getNumber("iN0"),
+    iN1 = getNumber("iN1");
   output.clear();
-  output.print("Average string length: " + iMath.average(iL) + "\n");
-  output.print("Average string radius: " + iMath.average(iD)/2 + "\n");
-  output.print("Average ring weight: " + iMath.average(im) + "\n");
+  output.print("Average string length: " + iMath.average(iL));
+  output.print("Average string radius: " + iMath.average(iD)/2);
+  output.print("Average ring weight: " + iMath.average(im));
+  output.print("Average inner radius: " + iMath.average(iri));
+  output.print("Average outer radius: " + iMath.average(iro));
+  output.print("Average cycle without ring: " + iMath.average(iT0)/iN0);
+  output.print("Average cycle with ring: " + iMath.average(iT1)/iN1);
 };
 

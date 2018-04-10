@@ -24,6 +24,10 @@ function getNumbers(name) {
   return toNumArray(document.querySelectorAll('input[name="' + name + '"]'));
 }
 
+function getNumber(name) {
+  return Number(document.getElementById(name).value);
+}
+
 function forEach(l, f) {
   let r = [];
   for (let i = 0; i < l.length; i++) {
