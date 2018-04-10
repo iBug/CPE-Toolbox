@@ -24,6 +24,14 @@ function getNumbers(name) {
   return toNumArray(document.querySelectorAll('input[name="' + name + '"]'));
 }
 
+function forEach(l, f) {
+  let r = [];
+  for (let i = 0; i < l.length; i++) {
+    r.push(f(l[i]));
+  }
+  return r;
+}
+
 const iMath = {
   average: function(l) {
     return this.sum(l) / l.length;

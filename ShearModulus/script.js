@@ -2,8 +2,7 @@ var btnAddData = document.getElementById("addData");
 btnAddData.addEventListener("click", e => e.preventDefault());
 btnAddData.onclick = function() {
   // Experimental new approach
-  let tr = document.getElementById("inputUnit");
-  tr = tr.cloneNode(true);
+  let tr = document.getElementById("inputUnit").cloneNode(true);
   tr.lastElementChild.firstElementChild.hidden = false;
   tr.lastElementChild.firstElementChild.onclick = function(e) {
     this.parentElement.parentElement.remove();
@@ -23,8 +22,6 @@ showResult.onclick = function() {
     iro = getNumebrs("iro"),
     iT0 = getNumbers("iT0"),
     iT1 = getNumbers("iT1");
-  let vl = toNumArray(sLens), vd = toNumArray(bDiams), vT = toNumArray(wTimes),
-    vN = Number(document.getElementById("N").value);
   output.clear();
   output.print("Average string length: " + iMath.average(iL) + "\n");
   output.print("Average string radius: " + iMath.average(iD)/2 + "\n");

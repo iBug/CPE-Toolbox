@@ -27,11 +27,11 @@ showResult.onclick = function() {
   var vl = toNumArray(sLens), vd = toNumArray(bDiams), vT = toNumArray(wTimes),
     vN = Number(document.getElementById("N").value);
   output.clear();
-  output.print("Average string length: " + iMath.average(vl) + "\n");
-  output.print("Average ball diagram: " + iMath.average(vd) + "\n");
-  output.print("Average wave time: " + iMath.average(vT)/vN + "\n");
-  output.print("Standard deviation of string length: " + iMath.stddev(vl) + "\n");
-  output.print("Standard deviation of ball diagram: " + iMath.stddev(vd) + "\n");
-  output.print("Standard deviation of wave time: " + iMath.stddev(vT)/vN + "\n");
+  output.print("Average string length: " + iMath.average(vl));
+  output.print("Average ball diagram: " + iMath.average(vd));
+  output.print("Average wave time: " + iMath.average(vT)/vN);
+  output.print("Standard deviation of string length: " + iMath.stddev(vl));
+  output.print("Standard deviation of ball diagram: " + iMath.stddev(vd));
+  output.print("Standard deviation of wave time: " + iMath.stddev(vT)/vN);
 };
 

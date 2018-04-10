@@ -3,16 +3,19 @@ title: Shear Modulus
 layout: tool
 ---
 
-<table align="center" id="preTable">
+<div class="form-group">
+	<table align="center" class="table">
+		<tbody>
+			<tr>
+				<td>Wave cycles without metal ring (N<sub>o</sub>) <input type="text" id="iN0" placeholder="30" class="form-control" /></td>
+				<td>Wave cycles with metal ring (N<sub>1</sub>) <input type="text" id="iN1" placeholder="50" class="form-control" /></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<table align="center" class="table" id="mainTable">
 	<tbody>
-		<tr>
-			<td>Wave cycles (N) <input type="text" id="iN" value="50" /></td>
-		</tr>
-	</tbody>
-</table>
-<table align="center" id="mainTable">
-	<tbody>
-		<tr>
+		<tr class="post-cell">
 			<th>String length (L)</th>
 			<th>String diameter (2 * R)</th>
 			<th>Metal ring weight (m)</th>
@@ -32,8 +35,8 @@ layout: tool
 			<td><a href="#delete" hidden>Delete</a></td>
 		</tr>
 		<tr id="addDataBefore">
-			<td colspan="4" align="center"><a id="addData" class="btn" href="#">Add another set</a></td>
-			<td colspan="4" align="center"><a id="showResult" class="btn" href="#">Show Result</a></td>
+			<td colspan="4" align="center"><a id="addData" class="btn btn-secondary" href="#">Add another set</a></td>
+			<td colspan="4" align="center"><a id="showResult" class="btn btn-primary" href="#">Show Result</a></td>
 		</tr>
 	</tbody>
 </table>

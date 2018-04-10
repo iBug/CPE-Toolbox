@@ -26,27 +26,27 @@ showResult.onclick = function() {
     vWaveLen = Number(document.getElementById("waveLength").value),
     vDist = document.getElementById("distance").value;
   if (vDist.length == 0) {
-    output.append("You forgot to enter L (distance between diffraction component and the CCD)!");
+    output.print("You forgot to enter L (distance between diffraction component and the CCD)!");
     return;
   }
   if (vk.length <= 1 || vx.length <= 1) {
-    output.append("Cannot work with only 1 set of data!");
+    output.print("Cannot work with only 1 set of data!");
     return;
   }
   vDist = Number(vDist);
 
   if (vk.length != vx.length) {
-    output.append("You supplied a different number of k's and x[k]'s.");
+    output.print("You supplied a different number of k's and x[k]'s.");
     return;
   }
   var va = [], ax = iMath.linreg.a(vk, vx);
   for (let i = 0; i < vk.length; i++) {
     va.push(vk[i] * vWaveLen * vDist / (vx[i] - ax));
   }
-  output.append("Average of x: " + ax + " mm");
+  output.print("Average of x: " + ax + " mm");
   for (let i = 0; i < va.length; i++) {
-    output.append("Calculated a[" + i + "]: " + va[i]/1000 + " \u03BCm");
+    output.print("Calculated a[" + i + "]: " + va[i]/1000 + " \u03BCm");
   }
-  output.append("Average of a: " + iMath.average(va)/1000 + " \u03BCm");
+  output.print("Average of a: " + iMath.average(va)/1000 + " \u03BCm");
 };
 
