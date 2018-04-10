@@ -34,10 +34,10 @@ showResult.onclick = function() {
   for (let i = 0; i < vk.length; i++) {
     va.push(vk[i] * vWaveLen * vDist / (vx[i] - ax));
   }
-  output.append("Average of x: " + ax);
+  output.append("Average of x: " + ax + " mm");
   for (let i = 0; i < va.length; i++) {
-    output.append("Calculated a[" + i + "]: " + va[i]);
+    output.append("Calculated a[" + i + "]: " + va[i]/1000 + " \u03BCm");
   }
-  output.append("Average of a: " + iMath.average(va));
+  output.append("Average of a: " + iMath.average(va)/1000 + " \u03BCm");
 };
 
