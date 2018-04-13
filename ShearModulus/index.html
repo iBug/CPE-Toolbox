@@ -13,30 +13,32 @@ layout: tool
 		</tbody>
 	</table>
 </div>
-<table align="center" class="table" id="mainTable">
-	<tbody>
-		<tr>
-			<th>String length (L)</th>
-			<th>String diameter (2 * R)</th>
-			<th>Metal ring weight (m)</th>
-			<th>Inner radius of metal ring (2 * r<sub>inner</sub>)</th>
-			<th>Outer radius of metal ring (2 * r<sub>outer</sub>)</th>
-			<th>Total wave time without metal ring (N * T<sub>0</sub>)</th>
-			<th>Total wave time with metal ring (N * T<sub>1</sub>)</th>
-		</tr>
-		<tr id="inputUnit">
-			<td><input type="text" name="iL" /></td>
-			<td><input type="text" name="iD" /></td>
-			<td><input type="text" name="im" /></td>
-			<td><input type="text" name="iri" /></td>
-			<td><input type="text" name="iro" /></td>
-			<td><input type="text" name="iT0" /></td>
-			<td><input type="text" name="iT1" /></td>
-			<td><a href="#delete" hidden>Delete</a></td>
-		</tr>
-		<tr id="addDataBefore">
-			<td colspan="4" align="center"><a id="addData" class="btn btn-secondary" href="#">Add another set</a></td>
-			<td colspan="4" align="center"><a id="showResult" class="btn btn-primary" href="#">Show Result</a></td>
-		</tr>
-	</tbody>
-</table>
+<div class="horizontal-scroll">
+	<table align="center" class="table" id="mainTable">
+		<tbody>
+			<tr>
+				<th>String length (L)</th>
+				<th>String diameter (2 * R)</th>
+				<th>Metal ring weight (m)</th>
+				<th>Inner radius of metal ring (2 * r<sub>inner</sub>)</th>
+				<th>Outer radius of metal ring (2 * r<sub>outer</sub>)</th>
+				<th>Total wave time without metal ring (N * T<sub>0</sub>)</th>
+				<th>Total wave time with metal ring (N * T<sub>1</sub>)</th>
+			</tr>
+			<tr id="inputUnit">
+				<td><input type="text" name="iL" /></td>
+				<td><input type="text" name="iD" /></td>
+				<td><input type="text" name="im" /></td>
+				<td><input type="text" name="iri" /></td>
+				<td><input type="text" name="iro" /></td>
+				<td><input type="text" name="iT0" /></td>
+				<td><input type="text" name="iT1" /></td>
+				<td><a href="#delete" hidden>Delete</a></td>
+			</tr>
+			<tr id="addDataBefore">
+				<td colspan="2" align="center"><a id="addData" class="btn btn-secondary" href="#">Add another set</a></td>
+				<td colspan="2" align="center"><a id="showResult" class="btn btn-primary" href="#">Show Result</a></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
