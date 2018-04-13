@@ -13,6 +13,10 @@ function toNumArray(l) {
   let res = [], text;
   for (let i = 0; i < l.length; i++) {
     text = l[i].value;
+    if (text.length == 0 && "placeholder" in l[i]) {
+      // Get placeholder if exist
+      text = l[i].placeholder;
+    }
     if (text.length != 0) {
       res.push(Number(l[i].value));
     }

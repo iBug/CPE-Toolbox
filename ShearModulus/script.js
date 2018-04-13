@@ -27,10 +27,10 @@ showResult.onclick = function() {
 
   let L = iMath.average(iL),
     m = iMath.average(im),
-    T0 = iMath.average(iT0),
-    T1 = iMath.average(iT1),
-    ri = iMath.average(iri),
-    ro = iMath.average(iro),
+    T0 = iMath.average(iT0) / iN0,
+    T1 = iMath.average(iT1) / iN1,
+    ri = iMath.average(iri) / 2,
+    ro = iMath.average(iro) / 2,
     R = iMath.average(iD) / 2;
   let G = 4 * Math.PI * L * m * (ri * ri + ro * ro) / ((T1 * T1 - T0 * T0) * Math.pow(R, 4))
 
