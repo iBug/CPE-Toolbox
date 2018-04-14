@@ -32,6 +32,7 @@ showResult.onclick = function() {
     ri = iMath.average(iri) / 2,
     ro = iMath.average(iro) / 2,
     R = iMath.average(iD) / 2;
+  let D = 2 * Math.PI * Math.PI * m * (ri * ri + ro * ro) / (T1 * T1 - T0 * T0)
   let G = 4 * Math.PI * L * m * (ri * ri + ro * ro) / ((T1 * T1 - T0 * T0) * Math.pow(R, 4))
 
   output.clear();
@@ -42,6 +43,7 @@ showResult.onclick = function() {
   output.print("Average outer radius: " + iMath.average(iro));
   output.print("Average cycle without ring: " + iMath.average(iT0)/iN0);
   output.print("Average cycle with ring: " + iMath.average(iT1)/iN1);
+  output.print("Result: D = " + D);
   output.print("Result: G = " + G);
 };
 
