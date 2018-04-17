@@ -3,6 +3,10 @@ btnAddData.addEventListener("click", e => e.preventDefault());
 btnAddData.onclick = function() {
   // Experimental new approach
   let tr = document.getElementById("inputUnit").cloneNode(true);
+  let inputs = tr.querySelectorAll("input");
+  for (let i = 0; i < inputs.length; i++) {
+    inputs[i].value = "";
+  }
   tr.lastElementChild.firstElementChild.hidden = false;
   tr.lastElementChild.firstElementChild.onclick = function(e) {
     this.parentElement.parentElement.remove();
