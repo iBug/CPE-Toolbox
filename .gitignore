@@ -2,3 +2,8 @@
 *.sw[a-p]
 *.sw_
 .DS_Store
+
+Gemfile.lock
+
+# Generated site
+_site

@@ -17,29 +17,12 @@
 	<body>
 		<div id="main" class="main-content">
 			{{ content }}
-			<pre id="output"></pre>
+			{% include output_field.html %}
 		</div>
 
 		<script src="{{ site.url }}/cdn/jquery/jquery-3.2.1.slim.min.js"></script>
 		<script src="{{ site.url }}/cdn/bootstrap/bootstrap.bundle.min.js"></script>
-		<script type="text/javascript">
-			const output = {
-				field: document.getElementById("output"),
-				clear: function() {
-					this.field.innerText = "";
-				},
-				append: function(str) {
-					this.field.innerText += str;
-					return str;
-				},
-				print: function(str) {
-					this.field.innerText += str + "\n";
-					return str;
-				},
-				name: "lib-iBug.output"
-			};
-		</script>
-		<script type="text/javascript" src="{{ site.baseurl }}/lib-ibug.js"></script>
-		<script type="text/javascript" src="script.js"></script>
+		<script type="text/javascript" src="{{ site.url }}{{ site.baseurl }}/lib-ibug.js"></script>
+		<script type="text/javascript">{% include_relative script.js %}</script>
 	</body>
 </html>

@@ -1,0 +1,18 @@
+<pre id="output"></pre>
+<script type="text/javascript">
+	const output = {
+		field: document.getElementById("output"),
+		clear: function() {
+			this.field.innerText = "";
+		},
+		append: function(str) {
+			this.field.innerText += str;
+			return str;
+		},
+		print: function(str) {
+			this.field.innerText += str + "\n";
+			return str;
+		},
+		name: "lib-iBug.output"
+	};
+</script>
