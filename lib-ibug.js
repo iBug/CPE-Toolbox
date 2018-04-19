@@ -29,11 +29,26 @@ function getNumbers(name) {
 }
 
 function getNumber(name) {
-  return Number(document.getElementById(name).value);
+  let val = document.getElementById(name).value;
+  if (val.length == 0) {
+      val = document.getElementById(name).placeholder;
+  }
+  if (val.length == 0) {
+    val = 0;
+  }
+  return Number(val);
 }
 
-function getPossiblityMode() {
-  return document.querySelector('input[name="possibility"]:checked').value;
+function getPossibilityMode() {
+  return Number(document.querySelector('input[name="possibility"]:checked').value);
+}
+
+function getPossibility(mode) {
+  if (mode == 1)
+    return 0.683;
+  if (mode == 2)
+    return 0.95;
+  return undefined;
 }
 
 function forEach(l, f) {
@@ -102,7 +117,9 @@ const iMath = {
     }
     return Math.sqrt(this.sum(dl) / (dl.length - !!unbiased));
   },
-  inacc: function(l, t, k, acc, C) {
+  inacc: function(l, acc, mode = 1, C = 3) {
+    t = lib.t_factor(l, mode);
+    k = lib.k_factor(mode);
     return Math.sqrt(
       Math.pow(t * this.ua(l), 2) + Math.pow(k * acc / C, 2)
     );

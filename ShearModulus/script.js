@@ -1,11 +1,13 @@
 var btnShowResult = document.getElementById("showResult");
-showResult.addEventListener("click", e => e.preventDefault());
-showResult.onclick = function() {
+showResult.onclick = function(clickEvent) {
+  clickEvent.preventDefault();
+  let pMode = getPossibilityMode(), possibility = getPossibility(pMode);
+
   let iL = getNumbers("iL"), // cm
-    iD = getNumbers("iD"), // mm
+    iR = forEach(getNumbers("iD"), x => x/2), // mm
     im = getNumbers("im"), // g
-    iri = getNumbers("iri"), // cm
-    iro = getNumbers("iro"), // cm
+    iri = forEach(getNumbers("iri"), x => x/2), // cm
+    iro = forEach(getNumbers("iro"), x => x/2), // cm
     iT0 = getNumbers("iT0"), // s
     iT1 = getNumbers("iT1"), // s
     iN0 = getNumber("iN0"),
@@ -15,21 +17,37 @@ showResult.onclick = function() {
     m = iMath.average(im),
     T0 = iMath.average(iT0) / iN0,
     T1 = iMath.average(iT1) / iN1,
-    ri = iMath.average(iri) / 2,
-    ro = iMath.average(iro) / 2,
-    R = iMath.average(iD) / 2;
+    ri = iMath.average(iri),
+    ro = iMath.average(iro),
+    R = iMath.average(iR);
   let D = 2 * Math.PI * Math.PI * m * (ri * ri + ro * ro) / (T1 * T1 - T0 * T0)
   let G = 4 * Math.PI * L * m * (ri * ri + ro * ro) / ((T1 * T1 - T0 * T0) * Math.pow(R, 4))
 
   output.clear();
-  output.print("Average string length: " + iMath.average(iL));
-  output.print("Average string radius: " + iMath.average(iD)/2);
-  output.print("Average ring weight: " + iMath.average(im));
-  output.print("Average inner radius: " + iMath.average(iri));
-  output.print("Average outer radius: " + iMath.average(iro));
-  output.print("Average cycle without ring: " + iMath.average(iT0)/iN0);
-  output.print("Average cycle with ring: " + iMath.average(iT1)/iN1);
-  output.print("Result: D = " + D);
-  output.print("Result: G = " + G);
+  output.print("Average string length: " + L + " cm");
+  output.print("Average string radius: " + R + " mm");
+  output.print("Average ring weight: " + m + " g");
+  output.print("Average inner radius: " + ri + " mm");
+  output.print("Average outer radius: " + ro + " mm");
+  output.print("Average cycle without ring: " + T0 + " s");
+  output.print("Average cycle with ring: " + T1 + " s");
+  output.print("");
+  output.print("Type A uncertainty of L: " + iMath.ua(iL) + " cm");
+  output.print("Type A uncertainty of R: " + iMath.ua(iR) + " mm");
+  output.print("Type A uncertainty of m: " + iMath.ua(im) + " g");
+  output.print("Type A uncertainty of ri: " + iMath.ua(iri) + " mm");
+  output.print("Type A uncertainty of ro: " + iMath.ua(iro) + " mm");
+  output.print("Type A uncertainty of T0: " + iMath.ua(iT0) + " s");
+  output.print("Type A uncertainty of T1: " + iMath.ua(iT1) + " s");
+  output.print("");
+  output.print("U[L, " + possibility + "] = " + iMath.inacc(iL, 0.8, pMode, 3) + " cm");
+  output.print("U[R, " + possibility + "] = " + iMath.inacc(iR, 0.004, pMode, 3) + " mm");
+  output.print("U[m, " + possibility + "] = " + iMath.inacc(im, 0.5, pMode, 3) + " g");
+  output.print("U[ri, " + possibility + "] = " + iMath.inacc(iri, 0.02, pMode, Math.sqrt(3)) + " cm");
+  output.print("U[ro, " + possibility + "] = " + iMath.inacc(iro, 0.02, pMode, Math.sqrt(3)) + " cm");
+  output.print("U[T0, " + possibility + "] = " + iMath.inacc(iT0, 0.2 / iN0, pMode, 3) + " s");
+  output.print("U[T1, " + possibility + "] = " + iMath.inacc(iT1, 0.2 / iN1, pMode, 3) + " s");
+  output.print("");
+  output.print("Result: D = " + (D * 1.0e-9) + " kg * m^2 / s^2");
+  output.print("Result: G = " + (G * 1.0e-9) + "*10^9 Pa");
 };
-
