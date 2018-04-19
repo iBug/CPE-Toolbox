@@ -32,6 +32,10 @@ function getNumber(name) {
   return Number(document.getElementById(name).value);
 }
 
+function getPossiblityMode() {
+  return document.querySelector('input[name="possibility"]:checked').value;
+}
+
 function forEach(l, f) {
   let r = [];
   for (let i = 0; i < l.length; i++) {
@@ -39,6 +43,43 @@ function forEach(l, f) {
   }
   return r;
 }
+
+const lib = {
+  t_factor: function(n, mode) {
+    const A = [3.00, 2.04, 1.56, 1.32, 1.20, 1.14, 1.11, 1.09, 1.08, 1.07, 1.06, 1.04, 1.03, 1.00];
+    const B = [0.00, 0.00, 0.00, 4.30, 3.18, 2.78, 2.57, 2.46, 2.37, 2.31, 2.26, 2.15, 2.09, 1.96]
+    if (mode == 1) {
+      if (n >= 0 && n <= 10)
+        return A[n];
+      if (n > 10 && n < 15)
+        return A[10];
+      if (n >= 15 && n < 20)
+        return A[11];
+      if (n >= 20)
+        return A[12];
+      return A[13];
+    } else if (mode == 2) {
+      if (n >= 0 && n <= 10)
+        return B[n];
+      if (n > 10 && n < 15)
+        return B[10];
+      if (n >= 15 && n < 20)
+        return B[11];
+      if (n >= 20)
+        return B[12];
+      return B[13];
+    }
+    return 1.0;
+  },
+  k_factor: function(mode) {
+    if (mode == 1)
+      return 1.0;
+    if (mode == 2)
+      return 1.96;
+    return 1.0;
+  },
+  name: "lib-iBug.lib"
+};
 
 const iMath = {
   average: function(l) {
@@ -61,7 +102,7 @@ const iMath = {
     }
     return Math.sqrt(this.sum(dl) / (dl.length - !!unbiased));
   },
-  uncertainty: function(l, t, k, acc, C) {
+  inacc: function(l, t, k, acc, C) {
     return Math.sqrt(
       Math.pow(t * this.ua(l), 2) + Math.pow(k * acc / C, 2)
     );
