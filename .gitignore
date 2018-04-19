@@ -7,3 +7,6 @@ Gemfile.lock
 
 # Generated site
 _site
+
+# Other dependencies
+cdn

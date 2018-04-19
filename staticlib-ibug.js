@@ -2,7 +2,7 @@ var btnAddData = document.getElementById("addData"),
   inputUnit = document.getElementById("inputUnit"),
   addDataBefore = document.getElementById("addDataBefore");
 
-if (Boolean(btnAddData) && Boolean(inputUnit) && Boolean(addDataBefore)) {
+if (btnAddData && inputUnit && addDataBefore) {
   btnAddData.onclick = function(e){
     e.preventDefault();
     let tr = inputUnit.cloneNode(true);
