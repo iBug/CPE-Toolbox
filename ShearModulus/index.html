@@ -3,7 +3,7 @@ title: Shear Modulus
 layout: tool
 ---
 
-<div class="form-group">
+<!-- <div class="form-group">
 	<table align="center" class="table">
 		<tbody>
 			<tr>
@@ -47,4 +47,79 @@ layout: tool
 				<td align="center"><a id="showResult" class="btn btn-primary" href="#">Show Result</a></td>
 		</tr>
 	</tbody>
-</table>
+</table> -->
+
+<div class="container">
+		<form>
+			<div class="form-group row">
+				<label class="col-sm-2">无金属环时波周期 N<sub>0</sub></label>
+				<div class="col-sm-10">
+					<input type="number" id="iN0" placeholder="30"/>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-sm-2">有金属环时波周期 N<sub>1</sub></label>
+				<div class="col-sm-10">
+					<input type="number" id="iN1" placeholder="50"/>
+				</div>
+
+			</div>
+			<hr>
+			<div class="form-group row">
+					<label class="col-sm-2">线长 L</label>
+					<div class="col-sm-10">
+						<input type="number" name="iL" />
+					</div>
+			</div>
+			<div class="form-group row">
+					<label class="col-sm-2">线直径 2 * R</label>
+					<div class="col-sm-10">
+						<input type="number" name="iD" />
+					</div>
+			</div>
+			<div class="form-group row">
+					<label class="col-sm-2">金属环质量 m</label>
+					<div class="col-sm-10">
+						<input type="number" name="im" />
+					</div>
+			</div>
+			<div class="form-group row">
+					<label class="col-sm-2">金属环内径 2 * r<sub>inner</sub></label>
+					<div class="col-sm-10">
+						<input type="number" name="iri" />
+					</div>
+			</div>
+			<div class="form-group row">
+					<label class="col-sm-2">金属环外径 2 * r<sub>outer</sub></label>
+					<div class="col-sm-10">
+						<input type="number" name="iro" />
+					</div>
+			</div>
+			<div class="form-group row">
+					<label class="col-sm-2">无金属环时总时间 N<sub>0</sub> * T<sub>0</sub></label>
+					<div class="col-sm-10">
+						<input type="number" name="iT0" />
+					</div>
+			</div>
+			<div class="form-group row">
+					<label class="col-sm-2">有金属环时总时间 N<sub>1</sub> * T<sub>1</sub></label>
+					<div class="col-sm-10">
+						<input type="number" name="iT1" />
+					</div>
+			</div>
+			<div class="form-group row">
+					<a href="#delete" hidden>删除此条</a>
+			</div>
+
+			{% include possibility.html %}
+
+			<div class="form-group row">
+				<div class="col-md-6">
+					<a id="addData" class="btn btn-secondary" href="#">添加新数据</a>
+				</div>
+				<div class="col-md-6">
+					<a id="showResult" class="btn btn-primary" href="#">计算</a>
+				</div>
+			</div>
+		</form>
+</div>
