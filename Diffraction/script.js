@@ -6,27 +6,27 @@ showResult.onclick = function() {
     vWaveLen = Number(document.getElementById("waveLength").value),
     vDist = document.getElementById("distance").value;
   if (vDist.length == 0) {
-    output.print("You forgot to enter L (distance between diffraction component and the CCD)!");
+    output.print("未输入距离 (衍射元件到 CCD)!");
     return;
   }
   if (vk.length <= 1 || vx.length <= 1) {
-    output.print("Cannot work with only 1 set of data!");
+    output.print("数据组数不足!");
     return;
   }
   vDist = Number(vDist);
 
   if (vk.length != vx.length) {
-    output.print("You supplied a different number of k's and x[k]'s.");
+    output.print("k 与 x_k 数量不同!");
     return;
   }
   var va = [], ax = iMath.linreg.a(vk, vx);
   for (let i = 0; i < vk.length; i++) {
     va.push(vk[i] * vWaveLen * vDist / (vx[i] - ax));
   }
-  output.print("Average of x: " + ax + " mm");
+  output.print("x 平均值: " + ax + " mm");
   for (let i = 0; i < va.length; i++) {
-    output.print("Calculated a[" + i + "]: " + va[i]/1000 + " \u03BCm");
+    output.print("计算得到 a[" + i + "]: " + va[i]/1000 + " \u03BCm");
   }
-  output.print("Average of a: " + iMath.average(va)/1000 + " \u03BCm");
+  output.print("a 平均值: " + iMath.average(va)/1000 + " \u03BCm");
 };
 
