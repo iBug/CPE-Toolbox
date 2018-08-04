@@ -1,9 +1,9 @@
----
-title: Pendulum
-layout: tool
+--- 
+title: Pendulum 
+layout: tool 
 ---
 
-<table align="center" id="preTable">
+<!-- <table align="center" id="preTable">
 	<tbody>
 		<tr>
 			<td>Wave count (N) <input type="text" id="N" value="50" /></td>
@@ -28,4 +28,41 @@ layout: tool
 			<td colspan="2"><a id="showResult" class="btn" href="#">Show Result</a></td>
 		</tr>
 	</tbody>
-</table>
+</table> -->
+
+<div class="container">
+	<form>
+		<div class="form-group row">
+			<label class="col-sm-2">周期数</label>
+			<div class="col-sm-10">
+				<input type="number" id="N" value="50" />
+			</div>
+		</div>
+		<div class="form-group row">
+				<label class="col-sm-2">摆线长 (cm)</label>
+				<div class="col-sm-10">
+					<input type="number" name="sLen" />
+				</div>
+		</div>
+		<div class="form-group row">
+				<label class="col-sm-2">摆球直径 (mm)</label>
+				<div class="col-sm-10">
+					<input type="number" name="bDiam" />
+				</div>
+		</div>
+		<div class="form-group row">
+				<label class="col-sm-2">总时间 (s)</label>
+				<div class="col-sm-10">
+					<input type="number" name="wTime" />
+				</div>
+		</div>
+		<div class="form-group row">
+			<div class="col-md-6">
+				<a id="addData" class="btn" href="#">添加新数据</a>
+			</div>
+			<div class="col-md-6">
+				<a id="showResult" class="btn" href="#">计算</a>
+			</div>
+		</div>
+	</form>
+</div>
