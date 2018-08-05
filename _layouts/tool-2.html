@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ page.title | default: "Unnamed tool" }} - CPE Toolbox</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<meta name="author" content="iBug" />
+		<meta property="og:locale" content="en_US" />
+		<link rel="canonical" href="{{ page.url }}" />
+		<link rel="stylesheet" href="{{ site.url }}/cdn/bootstrap/bootstrap.min.css" type="text/css" />
+		<link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/assets/style.css" type="text/css" />
+		<meta name="theme-color" content="#FF0000" />
+		<meta http-equiv="cache-control" content="no-cache" />
+		<meta http-equiv="expires" content="0" />
+		<meta name="robots" content="noarchive" />
+	</head>
+	<body>
+		<script type="text/javascript" src="script.js"></script>
+		<div id="main" class="main-content">
+			<div class="container">
+				<form id="main-form">
+				</form>
+			</div>
+			{% include output_field.html %}
+		</div>
+
+		<script src="{{ site.url }}{{ site.baseurl }}/form-generator.js"></script>
+		<script src="{{ site.url }}/cdn/jquery/jquery-3.2.1.slim.min.js"></script>
+		<script src="{{ site.url }}/cdn/bootstrap/bootstrap.bundle.min.js"></script>
+		<script type="text/javascript" src="{{ site.url }}{{ site.baseurl }}/lib-ibug.js"></script>
+	</body>
+</html>
