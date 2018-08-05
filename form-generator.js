@@ -36,14 +36,14 @@
     let div = makeElement("div", ["form-group", "row"]);
     mainForm.appendChild(div);
     div.appendChild(makeElement("label", "col-sm-2", g_values[i][0]));
+    let innerDiv = makeElement("div", "col-sm-10");
+    div.appendChild(innerDiv);
 
     const addData = function() {
-      let innerDiv = makeElement("div", "col-sm-10");
       let input = makeElement("input");
       input.type = "number";
       input.name = g_values[i][1];
       innerDiv.appendChild(input);
-      div.appendChild(innerDiv);
     };
     addData();
 
